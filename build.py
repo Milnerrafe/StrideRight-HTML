@@ -16,7 +16,6 @@ def index():
 
 @app.route('/about/')
 def about():
-    # This generates 'dist/about/index.html' for clean URLs
     return render_template('about.html', title="About Us")
 
 if __name__ == '__main__':

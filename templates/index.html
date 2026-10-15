@@ -3,4 +3,133 @@
 {% block title %}Home Page{% endblock %}
 
 {% block content %}
+
+<style>
+
+#homepage-container {
+    padding: 50px 50px 0px 50px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+}
+
+.hero-banner {
+    height: 500px;
+    background-color: #ffff00;
+    width: 100%;
+}
+
+.hero-details {
+    margin: 20px 0px 0px 0px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 15px;
+}
+
+.hero-details .title {
+    color: #000;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 510;
+}
+
+
+.hero-details .morelink {
+    color: #000;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.hero-details .dots {
+    display: flex;
+    width: 100px;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.hero-details .dot {
+    display: flex;
+    width: 100px;
+    gap: 10px;
+    border-radius: 100000px;
+    background-color: #C9C9C9;
+    width: 12px;
+    height: 12px;
+    aspect-ratio: 1/1;
+    transition: background-color 0.15s ease-in-out;
+}
+
+.hero-details .dot.active {
+    background-color: #000;
+}
+
+.hero-details .dot:hover {
+    background-color: #7F7F7F;
+}
+
+
+@media (max-width: 600px) {
+    #homepage-container {
+        padding: 0px;
+    }
+
+    .morelink.desktop-content {
+        display: none;
+    }
+
+    .hero-details {
+        margin: 7px 15px 0px 15px;
+        width: calc(100% - 15px);
+    }
+
+    .hero-details .title{
+        font-size: 14px;
+    }
+
+    .hero-details .dot {
+        width: 8px;
+        height: 8px;
+        aspect-ratio: 1/1;
+    }
+
+    .hero-details .dots {
+        width: 65px;
+        gap: 5px;
+        cursor: pointer;
+        justify-content: center;
+    }
+
+
+
+
+
+}
+
+
+
+
+</style>
+
+<div id="homepage-container">
+    <div class="hero-banner"></div>
+    <div class="hero-details">
+        <div class="title">2026 Sumer Sale</div>
+        <div class="morelink desktop-content">Learn More􀆊</div>
+        <div class="filler"></div>
+        <div class="dots">
+            <div class="dot active"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+    </div>
+
+</div>
+
+
 {% endblock %}

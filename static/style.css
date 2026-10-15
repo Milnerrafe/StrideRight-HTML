@@ -7,6 +7,10 @@
   src: url(/static/fonts/sf-pro.woff2) format('woff2-variations');
 }
 
+html {
+    font-family: 'SF Pro';
+}
+
 
 .hiden {
     display: none !important;
