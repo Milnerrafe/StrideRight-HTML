@@ -36,5 +36,5 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: deploy dist --project-name=strideright
+          command: deploy
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}

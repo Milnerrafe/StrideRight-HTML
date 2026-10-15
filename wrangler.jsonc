@@ -1,0 +1,7 @@
+{
+  "name": "strideright",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS"
+  }
+}
