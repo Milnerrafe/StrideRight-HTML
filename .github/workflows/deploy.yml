@@ -29,6 +29,10 @@ jobs:
 
 
       - name: Run Build Script
+        env:
+          PYTHONUTF8: "1"
+          LANG: "C.UTF-8"
+          LC_ALL: "C.UTF-8"
         run: python build.py
 
       - name: Deploy
