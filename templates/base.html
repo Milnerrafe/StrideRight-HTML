@@ -3,10 +3,8 @@
 <head>
     <title>{% block title %}StrideRight{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <link rel="preload" href="{{ url_for('static', filename='beforeload.js') }}" as="script">
-    <script src="{{ url_for('static', filename='beforeload.js') }}" ></script>
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
 
-    <script src="{{ url_for('static', filename='afterload.js') }}" defer></script>
 </head>
 <body>
     <header>

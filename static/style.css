@@ -4,7 +4,7 @@
   font-display: swap;
   font-weight: 1 1000;
   font-stretch: 30% 150%;
-  src: url(/static/sf-pro.woff2) format('woff2-variations');
+  src: url(/static/fonts/sf-pro.woff2) format('woff2-variations');
 }
 
 
@@ -359,4 +359,8 @@ z-index: 900;
 
 .link:hover {
     color: #3f3f3f;
+}
+
+.cart-and-account div {
+    cursor: pointer;
 }
