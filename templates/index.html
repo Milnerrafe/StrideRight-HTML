@@ -77,37 +77,23 @@
         padding: 0px;
     }
 
-    .morelink.desktop-content {
-        display: none;
+    .desktop-content {
+        display: none !important;
     }
 
     .hero-details {
-        margin: 7px 15px 0px 15px;
-        width: calc(100% - 15px);
+        margin: 7px 0px 0px 0px;
+        padding: 0px 14px;
+        width: calc(100% - 28px);
     }
-
-    .hero-details .title{
-        font-size: 14px;
-    }
-
-    .hero-details .dot {
-        width: 8px;
-        height: 8px;
-        aspect-ratio: 1/1;
-    }
-
-    .hero-details .dots {
-        width: 65px;
-        gap: 5px;
-        cursor: pointer;
-        justify-content: center;
-    }
-
-
-
-
-
 }
+
+
+@media (min-width: 600px) {
+   .mobile-content {
+       display: none !important;
+   }
+
 
 
 
