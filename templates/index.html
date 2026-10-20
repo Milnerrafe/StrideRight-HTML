@@ -92,7 +92,7 @@
     cursor: pointer;
     height: 86px;
     background-color: #C9C9C9;
-    transition: background-color 0.15s ease-in-out;
+    /*transition: background-color 0.15s ease-in-out;*/
     display: flex;
     align-items: center;
     padding: 0px 0px 0px 19px;
@@ -186,11 +186,26 @@ footer .links-container {
 footer .links {
     display: flex;
     flex-direction: column;
-    color: #FFF;
     font-size: 25px;
     font-style: normal;
     font-weight: 400;
 }
+
+footer .links a {
+    color: #FFF;
+    cursor: pointer;
+}
+
+footer .links a:hover {
+    color: #C9C9C9;
+}
+
+
+
+footer .spacer {
+    width: 53px;
+}
+
 
 
 @media (max-width: 600px) {

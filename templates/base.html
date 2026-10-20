@@ -4,6 +4,7 @@
     <title>{% block title %}StrideRight{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.svg') }}">
     <meta charset="UTF-8">
 </head>
 <body>
@@ -132,6 +133,7 @@
                 </div>
             </div>
         </div>
+        <div class="spacer desktop-content"></div>
     </footer>
 </body>
 </html>
