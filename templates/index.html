@@ -7,7 +7,7 @@
 <style>
 
 #homepage-container {
-    padding: 50px 50px 0px 50px;
+    padding: 70px 70px 0px 70px;
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -71,6 +71,127 @@
     background-color: #7F7F7F;
 }
 
+.sports {
+    zoom: 0.75;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 62px 0px 0px 0px;
+    gap: 5px;
+}
+
+.sports h1 {
+    color: #000;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 510;
+    margin: 0px 0px 15px 0px;
+}
+
+.sports a {
+    cursor: pointer;
+    height: 86px;
+    background-color: #C9C9C9;
+    transition: background-color 0.15s ease-in-out;
+    display: flex;
+    align-items: center;
+    padding: 0px 0px 0px 19px;
+    color: #000;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.sports a, .sports a:visited, .sports a:hover, .sports a:active {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+.sports a:hover:nth-child(4n+1) {
+    background-color: #0095FF;
+    color: #fff;
+}
+
+.sports a:hover:nth-child(4n+3) {
+    background-color: #FF0000;
+    color: #fff;
+}
+
+.sports a:hover:nth-child(4n+2) {
+    background-color: #00FF51;
+}
+
+.sports a:hover:nth-child(4n) {
+    background-color: #FFBF00;
+}
+
+footer {
+    margin: 240px 0px 0px 0px;
+    height: 330;
+    display: flex;
+    padding: 40px;
+    color: #fff;
+    background-color: #000;
+}
+
+footer .logo-column {
+    display: flex;
+    flex-direction: column;
+    max-width: 309px;
+}
+
+footer .logo-column .logo {
+    margin: 0px 0px 17px 0px;
+}
+
+
+footer .logo-column .details-text {
+    display: flex;
+    flex-direction: column;
+}
+
+footer .logo-column .details-text p {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    padding: 0px;
+    margin: 0px;
+}
+
+
+footer .logo-column .details-text .gap {
+    height: 19px;
+}
+
+footer .links-column {
+    display: flex;
+    flex-direction: column;
+}
+
+footer .links-column h1{
+    padding: 0px;
+    margin: 0px 0px 10px 0px;
+    color: #FFF;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 510;
+}
+
+footer .links-container {
+    display: flex;
+    gap: 77px;
+}
+
+footer .links {
+    display: flex;
+    flex-direction: column;
+    color: #FFF;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+}
+
 
 @media (max-width: 600px) {
     #homepage-container {
@@ -80,11 +201,21 @@
     .desktop-content {
         display: none !important;
     }
+    .sports {
+        margin: 62px 0px 0px 0px;
+        padding: 0px 14px;
+        width: calc(100% - 28px);
+    }
 
     .hero-details {
         margin: 7px 0px 0px 0px;
         padding: 0px 14px;
         width: calc(100% - 28px);
+    }
+
+    footer {
+        flex-direction: column-reverse;
+        gap: 37px;
     }
 }
 
@@ -93,9 +224,6 @@
    .mobile-content {
        display: none !important;
    }
-
-
-
 
 
 </style>
@@ -115,6 +243,19 @@
         </div>
     </div>
 
+    <div class="sports">
+        <h1>Whats Your Sport?</h1>
+        <a>􀦥 Football</a>
+        <a>􂒳 AFL</a>
+        <a>􁗊 Basketball</a>
+        <a>􁗍 Tennis</a>
+        <a>􂟀 Ice Skating</a>
+        <a>􁔜 Bowling</a>
+        <a>􁔛 Netball</a>
+        <a>􁜂 Cricket</a>
+        <a>􁜫 Volleyball</a>
+        <a>􁛾 Hockey</a>
+    </div>
 </div>
 
 
