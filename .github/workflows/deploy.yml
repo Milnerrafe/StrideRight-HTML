@@ -20,6 +20,7 @@ jobs:
       - name: Get Python
         uses: actions/setup-python@v7
         with:
+          python-version: '3.14.4'
           cache: 'pip'
 
       - name: Install libraries
