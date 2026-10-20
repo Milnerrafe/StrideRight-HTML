@@ -1,7 +1,11 @@
+{% set title = "StrideRight" %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>{% block title %}StrideRight{% endblock %}</title>
+    <title>{{ title }}</title>
+    <meta property="og:title" content="{{ title }}" />
+    <meta property="og:description" content="Australia's Number One Shoe Retailer" />
+    <meta property="og:image" content="{{ url_for('static', filename='images/ogimage.png') }}" />
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <script src="{{ url_for('static', filename='script.js') }}" defer></script>
     <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.svg') }}">
