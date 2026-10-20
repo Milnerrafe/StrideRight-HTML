@@ -17,13 +17,16 @@ jobs:
       - name: Download Code
         uses: actions/checkout@v7
 
-      - name: Get Python
+      - name: Install Python
         uses: actions/setup-python@v7
         with:
           python-version: '3.14.4'
           cache: 'pip'
 
-      - name: Run Build Script
+      - name: Install Packages
+        run: pip install -r requirements.txt
+
+      - name: Build Website
         env:
           PYTHONUTF8: "1"
           LANG: "C.UTF-8"
