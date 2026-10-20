@@ -113,18 +113,18 @@ function animate(timestamp) {
   range.selectNodeContents(footballel);
   const football = range.getBoundingClientRect();
   const cursor = document.querySelector('#cursor');
-  const container = document.querySelector('.div3').getBoundingClientRect();
+  const container = document.querySelector('.section3').getBoundingClientRect();
 
-  const RightwidthDifference = football.right - document.querySelector('.div3').getBoundingClientRect().right;
-  const LeftwidthDifference = document.querySelector('.div3').getBoundingClientRect().left - football.left;
+  const RightwidthDifference = football.right - document.querySelector('.section3').getBoundingClientRect().right;
+  const LeftwidthDifference = document.querySelector('.section3').getBoundingClientRect().left - football.left;
 
   let cursorWidth = football.width
 
-  if (football.right > document.querySelector('.div3').getBoundingClientRect().right ) {
+  if (football.right > document.querySelector('.section3').getBoundingClientRect().right ) {
      cursorWidth = football.width - RightwidthDifference
    };
 
-  if (document.querySelector('.div3').getBoundingClientRect().left > football.left) {
+  if (document.querySelector('.section3').getBoundingClientRect().left > football.left) {
      cursorWidth = football.width - LeftwidthDifference
    };
 
@@ -142,7 +142,7 @@ function animate(timestamp) {
 
 requestAnimationFrame(animate);
 
-document.querySelector('.div3').addEventListener('scroll', (event) => {
+document.querySelector('.section3').addEventListener('scroll', (event) => {
   document.querySelector('#cursor').style.setProperty('--target-left', `0px`);
   document.querySelector('#cursor').style.setProperty('--target-left', `${(document.querySelector('#sports').getBoundingClientRect().left - cursor.getBoundingClientRect().left) / cursor.currentCSSZoom}px`);
 });

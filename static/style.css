@@ -8,7 +8,8 @@
 }
 
 html {
-    font-family: 'SF Pro';
+    font-family: 'SF Pro', system-ui, sans-serif;
+    background-color: #000;
 }
 
 
@@ -38,6 +39,7 @@ main {
 body {
     margin: 0;
     padding: 0;
+    background-color: #fff;
 }
 
 header {
@@ -130,26 +132,26 @@ header .cart-button {
     width: 100%;
 }
 
-.div1 {
+.section1 {
     grid-column: span 2 / span 2;
     overflow: auto;
     display: flex;
 }
 
-.div2 {
+.section2 {
     grid-column: span 3 / span 3;
     grid-column-start: 3;
     display: flex;
 }
 
-.div3 {
+.section3 {
     grid-column: span 2 / span 2;
     grid-row: span 7 / span 7;
     grid-row-start: 2;
     overflow: auto;
 }
 
-.div4 {
+.section4 {
     grid-column: span 3 / span 3;
     grid-row: span 7 / span 7;
     grid-column-start: 3;
@@ -471,24 +473,14 @@ z-index: 900;
     text-decoration: none;
 }
 
-
-.sports a:hover:nth-child(4n+1) {
-    background-color: #0095FF;
-    color: #fff;
-}
-
-.sports a:hover:nth-child(4n+3) {
-    background-color: #FF0000;
-    color: #fff;
-}
-
-.sports a:hover:nth-child(4n+2) {
+.sports a:hover {
     background-color: #00FF51;
 }
 
-.sports a:hover:nth-child(4n) {
-    background-color: #FFBF00;
+.sports a:active {
+    background-color: #00BF3D;
 }
+
 
 footer {
     margin: 240px 0px 0px 0px;
@@ -564,10 +556,75 @@ footer .links a:hover {
     color: #C9C9C9;
 }
 
-
-
 footer .spacer {
     width: 53px;
+}
+
+#sports-header {
+    height: 390px;
+    display: flex;
+    align-items: flex-end;
+    padding: 0px 30px 30px 30px;
+    background-color: #ffd700;
+}
+
+#sports-header h1 {
+    margin: 0px;
+    padding: 0px;
+    color: #000;
+    font-size: 96px;
+    font-style: normal;
+    font-weight: 510;
+}
+
+#sports-header .links {
+    display: flex;
+    flex-direction: column;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+#sports-header .links a {
+    cursor: pointer;
+    user-select: none;
+}
+
+#sports-header .links a:hover {
+    background-color: #C9C9C9;
+}
+
+#sports-header .links a:active {
+    background-color: #B7B7B7;
+}
+
+#product-types {
+    height: 124px;
+    display: flex;
+    padding: 0px 0px 0px 30px;
+    gap: 20px;
+    align-items: center;
+    user-select: none;
+}
+
+#product-types .type {
+    color: #C9C9C9;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 510;
+    cursor: pointer;
+}
+
+#product-types .type:hover {
+    color: #B7B7B7;
+}
+
+#product-types .type:active {
+    color: #7F7F7F;
+}
+
+#product-types .type.selected {
+    color: #000;
 }
 
 

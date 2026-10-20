@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}StrideRight: {{ sport }} {% endblock %}
+
+{% block content %}
+
+<div id="sports-header">
+    <h1>{{ sport }}</h1>
+
+    <div class="filler"></div>
+
+    <div class="links desktop-content">
+        <a>Choosing your cleats</a>
+        <a>Our Football Blog</a>
+        <a>Available sponsorships</a>
+    </div>
+</div>
+
+<div id="product-types">
+    <div class="type selected">All</div>
+    <div class="type">Shoes</div>
+    <div class="type">Gear</div>
+    <div class="type">Balls</div>
+</div>
+
+
+
+{% endblock %}

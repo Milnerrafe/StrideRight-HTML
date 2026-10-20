@@ -1,14 +1,14 @@
-{% set title = "StrideRight" %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>{{ title }}</title>
-    <meta property="og:title" content="{{ title }}" />
+    <title>{% block title %}StrideRight{% endblock %}</title>
+    <meta property="og:title" content="{{ self.title() }}" />
     <meta property="og:description" content="Australia's Number One Shoe Retailer" />
     <meta property="og:image" content="{{ url_for('static', filename='images/ogimage.png') }}" />
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <script src="{{ url_for('static', filename='script.js') }}" defer></script>
     <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.svg') }}">
+    <link rel="preload" as="font" href="/static/fonts/sf-pro.woff2" type="font/woff2" crossorigin="anonymous">
     <meta charset="UTF-8">
 </head>
 <body>
@@ -43,19 +43,19 @@
 
     <div id="shop-drop-down" class="hiden">
         <div class="parent">
-            <div class="div1">
+            <div class="section1">
                 <div class="sliding-segmented-control">
                     <div class="selected"></div>
                     <div class="item">􁗊Sports</div>
                     <div class="item" id="casual" >􀾠Casual</div>
                 </div>
             </div>
-            <div class="div2">
+            <div class="section2">
                 <form action="https://google.com/search" id="SearchForm" method="get">
                     <input type="text" name="q" placeholder="􀊫Search" id="SearchBox" required>
                 </form>
             </div>
-            <div class="div3">
+            <div class="section3">
            	    <div id="links">
          			<div id="more-links">
             				<div class="link">Account</div>
@@ -82,7 +82,7 @@
          			</div>
           		</div>
        	</div>
-            <div class="div4">
+            <div class="section4">
                 <div id="bigtext">Football</div>
             </div>
         </div>
