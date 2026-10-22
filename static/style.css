@@ -13,7 +13,7 @@ html {
 }
 
 
-.hiden {
+.hidden {
     display: none !important;
 }
 
@@ -123,7 +123,7 @@ header .cart-button {
 
 /*Dropdowncode*/
 
-.parent {
+.dropdowngrid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(8, 1fr);
@@ -156,7 +156,7 @@ header .cart-button {
     grid-row: span 7 / span 7;
     grid-column-start: 3;
     grid-row-start: 2;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.70) 0%, rgba(0, 0, 0, 0.70) 100%), url(/image.webp) lightgray 50% / cover no-repeat;
+    linear-gradient(0deg, rgba(0, 0, 0, 0.70) 0%, rgba(0, 0, 0, 0.70) 100%), url('/static/images/headers/football.png') lightgray 50% / cover no-repeat
 }
 
 #shop-drop-down {
@@ -269,14 +269,7 @@ z-index: 900;
 
 }
 
-#bigtext {
-    color: #FFF;
-    font-family: "SF Pro";
-    font-size: 64px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
+
 
 #hovermode {
     display: flex;
@@ -481,9 +474,12 @@ z-index: 900;
     background-color: #00BF3D;
 }
 
+.bottom-padding {
+    height: 240px;
+}
 
 footer {
-    margin: 240px 0px 0px 0px;
+    margin: 0px;
     height: 330;
     display: flex;
     padding: 40px;
@@ -626,6 +622,109 @@ footer .spacer {
 #product-types .type.selected {
     color: #000;
 }
+
+#product-types .SearchForm {
+    all: unset;
+    display: flex;
+    padding: 0px 30px 0px 0px;
+}
+
+#product-types .SearchForm .SearchBox {
+    border-radius: 5px;
+    border: 2px solid #000;
+    background: #fff;
+    width: 100%;
+    display: flex;
+    flex-grow: 1;
+    color: #000;
+    font-family: "SF Pro";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    padding: 5px;
+}
+
+
+#product-grid-container {
+    padding: 0px 0px 0px 30px;
+    display: flex;
+}
+
+#product-grid-container .filters {
+    width: 355px;
+    background: #C9C9C9;
+}
+
+#product-grid-container .filters .topbar {
+    display: flex;
+    margin: 10px;
+    align-items: center;
+}
+
+#product-grid-container .filters .topbar h1{
+    padding: 0px;
+    margin: 0px;
+    color: #000;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 510;
+}
+
+#product-grid-container .filters .topbar .hide-button{
+    color: #000;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+#bigtext {
+    padding: 27px;
+}
+
+#bigtext .sportslink {
+    display: flex;
+    flex-direction: column;
+}
+
+#bigtext .sportslink .gap {
+    height: 40px;
+}
+
+#bigtext .sportslink h1 {
+    color: #FFF;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    padding: 0px;
+    margin: 0px;
+}
+
+#bigtext .sportslink a {
+    all: unset;
+    color: #FFF;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+#bigtext .sportslink a:hover {
+    color: #B7B7B7;
+}
+
+#bigtext .sportslink a:active {
+    color: #7F7F7F;
+}
+
+#home-link:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
 
 
 

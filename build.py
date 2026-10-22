@@ -29,6 +29,11 @@ def sports(sport):
     return render_template('sports.html')
 
 
+@app.route('/casual/')
+def casual():
+    return render_template('casual.html')
+
+
 @freezer.register_generator
 def sports_generator():
     sports = [

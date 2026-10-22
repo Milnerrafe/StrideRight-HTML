@@ -20,46 +20,248 @@ window.addEventListener('DOMContentLoaded', desktopMobileOptimizer);
 window.addEventListener('resize', desktopMobileOptimizer);
 
 
-// Dropdowncode
-
-let sportsorcasual = true
-
-if (sportsorcasual == true) {
-  document.querySelectorAll('.sliding-segmented-control .item')[0].style.color = "#000";
-  document.querySelectorAll('.sliding-segmented-control .item')[1].style.color = "#fff";
-  document.querySelector('.sliding-segmented-control .selected').style.setProperty('--translate', `0%`);
-}
-
-if (sportsorcasual == false) {
-  document.querySelectorAll('.sliding-segmented-control .item')[0].style.color = "#fff";
-  document.querySelectorAll('.sliding-segmented-control .item')[1].style.color = "#000";
-  document.querySelector('.sliding-segmented-control .selected').style.setProperty('--translate', `100%`);
-}
-
-document.querySelector('.sliding-segmented-control').addEventListener('click', (event) => {
-      if (event.target == document.querySelectorAll('.sliding-segmented-control .item')[0]) {
-        document.querySelectorAll('.sliding-segmented-control .item')[0].style.color = "#000";
-        document.querySelectorAll('.sliding-segmented-control .item')[1].style.color = "#fff";
-        document.querySelector('.sliding-segmented-control .selected').style.setProperty('--translate', `0%`);
-        sportsorcasual = true;
-      }
-
-      if (event.target == document.querySelectorAll('.sliding-segmented-control .item')[1]) {
-        document.querySelectorAll('.sliding-segmented-control .item')[0].style.color = "#fff";
-        document.querySelectorAll('.sliding-segmented-control .item')[1].style.color = "#000";
-        document.querySelector('.sliding-segmented-control .selected').style.setProperty('--translate', `100%`);
-        sportsorcasual = false;
-      }
-});
-
-
-
 
 let shopDropdownopen = false
 let target = '#FOOTBALL'
 let pretarget = ''
 let activeAnimation = null;
 let cooldown = 0
+let footballel = document.querySelector(target);
+let bigtext = document.querySelector('#bigtext')
+let sportsorcasual = true
+
+
+
+function sportsorcasualfunc() {
+  if (sportsorcasual == true) {
+    document.querySelectorAll('.sliding-segmented-control .item')[0].style.color = "#000";
+    document.querySelectorAll('.sliding-segmented-control .item')[1].style.color = "#fff";
+    document.querySelector('.sliding-segmented-control .selected').style.setProperty('--translate', `0%`);
+    document.querySelector('#sports').classList.remove('hidden');
+    document.querySelector(".section4").style.background = `linear-gradient(0deg, rgba(0, 0, 0, 0.70) 0%, rgba(0, 0, 0, 0.70) 100%), url('/static/images/headers/${footballel.textContent.toLocaleLowerCase()}.png') lightgray 50% / cover no-repeat`
+    bigtext.innerHTML = `
+      <div class="sportslink">
+          <h1>
+              ${footballel.textContent}
+          </h1>
+          <a href="/sports/${footballel.textContent.toLocaleLowerCase()}.html?type=all" >Shop All ${footballel.textContent}</a>
+          <a href="/sports/${footballel.textContent.toLocaleLowerCase()}.html?type=shoes" >Shoes</a>
+          <a href="/sports/${footballel.textContent.toLocaleLowerCase()}.html?type=gear" >Gear</a>
+          <a href="/sports/${footballel.textContent.toLocaleLowerCase()}.html?type=ball" >Balls</a>
+          <div class="gap"></div>
+          <a>Choosing your Gear</a>
+          <a>Our ${footballel.textContent} Blog</a>
+      </div>
+      `
+  }
+
+  if (sportsorcasual == false) {
+    document.querySelectorAll('.sliding-segmented-control .item')[0].style.color = "#fff";
+    document.querySelectorAll('.sliding-segmented-control .item')[1].style.color = "#000";
+    document.querySelector('.sliding-segmented-control .selected').style.setProperty('--translate', `100%`);
+    document.querySelector(".section4").style.background = `linear-gradient(0deg, rgba(0, 0, 0, 0.70) 0%, rgba(0, 0, 0, 0.70) 100%), lightgray 50% / cover no-repeat`
+    document.querySelector('#sports').classList.add('hidden');
+    bigtext.innerHTML = `
+      <div class="sportslink">
+          <a href="/casual/vibes" >Vibes</a>
+          <a href="/casual/featured" >Featured</a>
+      </div>
+      `
+  }
+}
+
+
+// Dropdowncode
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const urlArray = window.location.pathname.split("/").filter(item => item !== '')
+  const currentPath = urlArray.length == 1 ? urlArray[0].toLowerCase() : "";
+
+  if (currentPath == "sports") {
+    console.log(1)
+    document.querySelectorAll('.sliding-segmented-control .item')[0].style.color = "#000";
+    document.querySelectorAll('.sliding-segmented-control .item')[1].style.color = "#fff";
+    document.querySelector('.sliding-segmented-control .selected').style.setProperty('--translate', `0%`);
+    document.querySelector('#sports').classList.remove('hidden');
+    document.querySelector(".section4").style.background = `linear-gradient(0deg, rgba(0, 0, 0, 0.70) 0%, rgba(0, 0, 0, 0.70) 100%), url('/static/images/headers/${footballel.textContent.toLocaleLowerCase()}.png') lightgray 50% / cover no-repeat`
+    bigtext.innerHTML = `
+      <div class="sportslink">
+          <h1>
+              ${footballel.textContent}
+          </h1>
+          <a href="/sports/${footballel.textContent.toLocaleLowerCase()}.html?type=all" >Shop All ${footballel.textContent}</a>
+          <a href="/sports/${footballel.textContent.toLocaleLowerCase()}.html?type=shoes" >Shoes</a>
+          <a href="/sports/${footballel.textContent.toLocaleLowerCase()}.html?type=gear" >Gear</a>
+          <a href="/sports/${footballel.textContent.toLocaleLowerCase()}.html?type=ball" >Balls</a>
+          <div class="gap"></div>
+          <a>Choosing your Gear</a>
+          <a>Our ${footballel.textContent} Blog</a>
+      </div>
+      `
+    sportsorcasual = true
+  }
+
+  if (currentPath == "casual") {
+    console.log(2)
+    document.querySelectorAll('.sliding-segmented-control .item')[0].style.color = "#fff";
+    document.querySelectorAll('.sliding-segmented-control .item')[1].style.color = "#000";
+    document.querySelector('.sliding-segmented-control .selected').style.setProperty('--translate', `100%`);
+    document.querySelector(".section4").style.background = `linear-gradient(0deg, rgba(0, 0, 0, 0.70) 0%, rgba(0, 0, 0, 0.70) 100%), lightgray 50% / cover no-repeat`
+    document.querySelector('#sports').classList.add('hidden');
+    bigtext.innerHTML = `
+      <div class="sportslink">
+          <a href="/casual/vibes" >Vibes</a>
+          <a href="/casual/featured" >Featured</a>
+      </div>
+      `
+    console.log(3)
+    sportsorcasual = false
+  }
+
+  sportsorcasualfunc()
+});
+
+sportsorcasualfunc()
+
+document.querySelector('#home-link').addEventListener('click', (event) => {
+  if (sportsorcasual) {
+    window.location = "/sports/";
+  } else {
+    window.location = "/casual/";
+  }
+});
+
+
+
+function changehomepage(sportsorcasual) {
+  const urlArray = window.location.pathname.split("/").filter(item => item !== '')
+  const currentPath = urlArray.length == 1 ? urlArray[0].toLowerCase() : "";
+
+  if (urlArray.length == 1 && (currentPath == "sports" || currentPath == "casual")) {
+    let section = ""
+
+    if (sportsorcasual) {
+      section = "sport"
+    } else {
+      section = "casual"
+    }
+
+    if (section == "sport" && currentPath == "casual") {
+      fetch('/sports/')
+        .then(response => {
+          if (!response.ok) {
+            throw new Error(`Could not fetch /sports/. Make sure you are hosting StridingRight with LiveServer, running python -m http.server, or using stridingright.net.`);
+          }
+          return response.text();
+        })
+        .then(htmlString => {
+          const html = new DOMParser().parseFromString(htmlString, 'text/html').querySelector('main').innerHTML;
+          document.querySelector('main').innerHTML = html;
+          openMenuLink();
+
+          // if (!document.startViewTransition) {
+          //   document.querySelector('main').innerHTML = html;
+          //   openMenuLink();
+          // } else {
+          //   document.startViewTransition(() => {
+          //     document.querySelector('main').innerHTML = html;
+          //     openMenuLink();
+          //   });
+          // }
+
+          window.history.replaceState({ page: 1 }, "Sports", "/Sports/");
+          openMenuLink();
+        })
+        .catch(error => {
+          console.error(`Could not fetch /sports/. Make sure you are hosting StridingRight with LiveServer, running python -m http.server, or using stridingright.net.`, error);
+        });
+    }
+
+    if (section == "casual" && currentPath == "sports") {
+      fetch('/casual/')
+        .then(response => {
+          if (!response.ok) {
+            throw new Error(`Could not fetch /casual/. Make sure you are hosting StridingRight with LiveServer, running python -m http.server, or using stridingright.net.`);
+          }
+          return response.text();
+        })
+        .then(htmlString => {
+          const html = new DOMParser().parseFromString(htmlString, 'text/html').querySelector('main').innerHTML;
+          document.querySelector('main').innerHTML = html;
+          openMenuLink();
+
+          // if (!document.startViewTransition) {
+          //   document.querySelector('main').innerHTML = html;
+          //   openMenuLink();
+          // } else {
+          //   document.startViewTransition(() => {
+          //     document.querySelector('main').innerHTML = html;
+          //     openMenuLink();
+          //   });
+          // }
+
+          window.history.replaceState({ page: 1 }, "Casual", "/casual/");
+          openMenuLink();
+        })
+        .catch(error => {
+          console.error(`Could not fetch /casual/. Make sure you are hosting StridingRight with LiveServer, running python -m http.server, or using stridingright.net.`, error);
+        });
+    }
+  }
+  openMenuLink();
+}
+
+
+
+
+
+document.querySelector('.sliding-segmented-control').addEventListener('click', (event) => {
+      if (event.target == document.querySelectorAll('.sliding-segmented-control .item')[0]) {
+        document.querySelectorAll('.sliding-segmented-control .item')[0].style.color = "#000";
+        document.querySelectorAll('.sliding-segmented-control .item')[1].style.color = "#fff";
+        document.querySelector('.sliding-segmented-control .selected').style.setProperty('--translate', `0%`);
+        document.querySelector('#sports').classList.remove('hidden');
+        document.querySelector(".section4").style.background = `linear-gradient(0deg, rgba(0, 0, 0, 0.70) 0%, rgba(0, 0, 0, 0.70) 100%), url('/static/images/headers/${footballel.textContent.toLocaleLowerCase()}.png') lightgray 50% / cover no-repeat`
+        bigtext.innerHTML = `
+          <div class="sportslink">
+              <h1>
+                  ${footballel.textContent}
+              </h1>
+              <a href="/sports/${footballel.textContent.toLocaleLowerCase()}.html?type=all" >Shop All ${footballel.textContent}</a>
+              <a href="/sports/${footballel.textContent.toLocaleLowerCase()}.html?type=shoes" >Shoes</a>
+              <a href="/sports/${footballel.textContent.toLocaleLowerCase()}.html?type=gear" >Gear</a>
+              <a href="/sports/${footballel.textContent.toLocaleLowerCase()}.html?type=ball" >Balls</a>
+              <div class="gap"></div>
+              <a>Choosing your Gear</a>
+              <a>Our ${footballel.textContent} Blog</a>
+          </div>
+          `
+        sportsorcasual = true;
+        changehomepage(sportsorcasual);
+      }
+
+      if (event.target == document.querySelectorAll('.sliding-segmented-control .item')[1]) {
+        document.querySelectorAll('.sliding-segmented-control .item')[0].style.color = "#fff";
+        document.querySelectorAll('.sliding-segmented-control .item')[1].style.color = "#000";
+        document.querySelector('.sliding-segmented-control .selected').style.setProperty('--translate', `100%`);
+        document.querySelector(".section4").style.background = `linear-gradient(0deg, rgba(0, 0, 0, 0.70) 0%, rgba(0, 0, 0, 0.70) 100%), lightgray 50% / cover no-repeat`
+        document.querySelector('#sports').classList.add('hidden');
+        bigtext.innerHTML = `
+          <div class="sportslink">
+              <a href="/casual/vibes" >Vibes</a>
+              <a href="/casual/featured" >Featured</a>
+          </div>
+          `
+        sportsorcasual = false;
+        changehomepage(sportsorcasual);
+      }
+});
+
+
+
+
+
 
 function animate(timestamp) {
 
@@ -67,17 +269,29 @@ function animate(timestamp) {
     cooldown = cooldown - 0.01
   }
 
-  const footballel = document.querySelector(target);
-
-
+  let footballel = document.querySelector(target);
 
   if (target !== pretarget) {
     try {
       document.querySelector(pretarget).style.color = "#000"
-      const bigtext = document.querySelector('#bigtext')
+      let bigtext = document.querySelector('#bigtext')
 
       if (cooldown > 0) {
-        bigtext.textContent = footballel.textContent
+        document.querySelector(".section4").style.background = `linear-gradient(0deg, rgba(0, 0, 0, 0.70) 0%, rgba(0, 0, 0, 0.70) 100%), url('/static/images/headers/${footballel.textContent.toLocaleLowerCase()}.png') lightgray 50% / cover no-repeat`
+        bigtext.innerHTML = `
+          <div class="sportslink">
+              <h1>
+                  ${footballel.textContent}
+              </h1>
+              <a href="/sports/${footballel.textContent.toLocaleLowerCase()}.html?type=all" >Shop All ${footballel.textContent}</a>
+              <a href="/sports/${footballel.textContent.toLocaleLowerCase()}.html?type=shoes" >Shoes</a>
+              <a href="/sports/${footballel.textContent.toLocaleLowerCase()}.html?type=gear" >Gear</a>
+              <a href="/sports/${footballel.textContent.toLocaleLowerCase()}.html?type=ball" >Balls</a>
+              <div class="gap"></div>
+              <a>Choosing your Gear</a>
+              <a>Our ${footballel.textContent} Blog</a>
+          </div>
+          `
       } else {
         cooldown = 1
         const activeAnimation = bigtext.animate([
@@ -89,7 +303,21 @@ function animate(timestamp) {
         });
 
         activeAnimation.onfinish = () => {
-          bigtext.textContent = footballel.textContent
+          document.querySelector(".section4").style.background = `linear-gradient(0deg, rgba(0, 0, 0, 0.70) 0%, rgba(0, 0, 0, 0.70) 100%), url('/static/images/headers/${footballel.textContent.toLocaleLowerCase()}.png') lightgray 50% / cover no-repeat`
+          bigtext.innerHTML = `
+            <div class="sportslink">
+                <h1>
+                    ${footballel.textContent}
+                </h1>
+                <a href="/sports/${footballel.textContent.toLocaleLowerCase()}.html?type=all" >Shop All ${footballel.textContent}</a>
+                <a href="/sports/${footballel.textContent.toLocaleLowerCase()}.html?type=shoes" >Shoes</a>
+                <a href="/sports/${footballel.textContent.toLocaleLowerCase()}.html?type=gear" >Gear</a>
+                <a href="/sports/${footballel.textContent.toLocaleLowerCase()}.html?type=ball" >Balls</a>
+                <div class="gap"></div>
+                <a>Choosing your Gear</a>
+                <a>Our ${footballel.textContent} Blog</a>
+            </div>
+            `
 
           bigtext.animate([
             { opacity: 0, transform: 'translateY(10px)' },
@@ -175,7 +403,7 @@ let hideTimeout = null;
 function openMenuLink() {
   trigger.classList.add('underline')
   clearTimeout(hideTimeout);
-  dropdown.classList.remove('hiden');
+  dropdown.classList.remove('hidden');
   requestAnimationFrame(animate);
 
   if (!shopDropdownopen) {
@@ -191,7 +419,7 @@ function openMenuLink() {
 function keepMenuopen() {
   trigger.classList.add('underline')
   clearTimeout(hideTimeout);
-  dropdown.classList.remove('hiden');
+  dropdown.classList.remove('hidden');
   shopDropdownopen = true
   requestAnimationFrame(animate);
 }
@@ -207,7 +435,7 @@ function closeMenuWithDelay() {
     );
 
     leaveanimation.onfinish = () => {
-      dropdown.classList.add('hiden');
+      dropdown.classList.add('hidden');
     }
   }, 200);
 }
