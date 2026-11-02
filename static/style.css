@@ -7,6 +7,14 @@
   src: url(/static/fonts/sf-pro.woff2) format('woff2-variations');
 }
 
+@font-face {
+    font-family: 'SF Pro Rounded';
+    font-style: normal;
+    font-display: swap;
+    font-weight: 400;
+    src: url(/static/fonts/sf-pro.woff2) format('woff2');
+}
+
 html {
     font-family: 'SF Pro', system-ui, sans-serif;
     background-color: #000;
@@ -561,13 +569,13 @@ footer .spacer {
     display: flex;
     align-items: flex-end;
     padding: 0px 30px 30px 30px;
-    background-color: #ffd700;
+    color: #fff;
 }
 
 #sports-header h1 {
     margin: 0px;
     padding: 0px;
-    color: #000;
+    color: #fff;
     font-size: 96px;
     font-style: normal;
     font-weight: 510;
@@ -587,11 +595,13 @@ footer .spacer {
 }
 
 #sports-header .links a:hover {
-    background-color: #C9C9C9;
+    background-color: #00FF51;
+    color: #000;
 }
 
 #sports-header .links a:active {
     background-color: #B7B7B7;
+    color: #000;
 }
 
 #product-types {
@@ -646,11 +656,12 @@ footer .spacer {
 
 
 #product-grid-container {
-    padding: 0px 0px 0px 30px;
+    padding: 0px;
     display: flex;
 }
 
 #product-grid-container .filters {
+    margin: 0px 0px 0px 30px;
     width: 355px;
     background: #C9C9C9;
 }
@@ -676,6 +687,37 @@ footer .spacer {
     font-style: normal;
     font-weight: 400;
     cursor: pointer;
+}
+
+.filter-bar .filter {
+    gap: 5px;
+    display: flex;
+    height: 25px;
+    padding: 5px;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+    margin: 0px 10px;
+    border-radius: 20px;
+    color: #fff;
+    background-color: attr(data-colour type(<color>), #F54040);
+}
+
+.filter-bar .filter .close {
+    cursor: pointer;
+}
+
+.filter-drop-downs {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    gap: 15px;
+}
+
+.filter-drop-downs .drop-down {
+    cursor: pointer;
+    font-size: 20px;
 }
 
 #bigtext {
@@ -721,6 +763,99 @@ footer .spacer {
     text-decoration: underline;
 }
 
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    cursor: pointer;
+    margin-bottom: 40px;
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1.48 / 1;
+    object-fit: cover;
+    box-shadow: 0 0 6.57px 0 rgba(0, 0, 0, 0.10);
+}
+
+
+.product img:hover {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.50);
+}
+
+.product .colours {
+    display: flex;
+    gap: 5px;
+}
+
+.product .colour {
+    width: 15px;
+    height: 15px;
+    background-color: attr(data-colour type(<color>), white);
+    border: 1px solid black;
+    border-radius: 1000px;
+}
+
+.product .details {
+    display: flex;
+}
+
+.product .details .name {
+    color: #000;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.product .details .price {
+    color: #000;
+    text-align: right;
+    font-family: "SF Pro Rounded";
+    font-size: 16px;
+    line-height: normal;
+}
+
+#product-grid-container .stack {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0px 50px 0px 50px;
+    gap: 10px;
+    margin-bottom: 100px;
+}
+
+.filter-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    min-width: 530px;
+}
+
+.filter-bar .sortby {
+    color: #000;
+    text-align: right;
+    font-family: "SF Pro";
+    font-size: 24px;
+    font-weight: 400;
+    cursor: pointer;
+    padding: 10px 0px 10px 0px;
+}
+
+#filters {
+    view-transition-name: filter;
+}
+
+#showfilters {
+    view-transition-name: filter;
+}
 
 
 
@@ -733,6 +868,10 @@ footer .spacer {
         padding: 0px;
     }
 
+    .product-grid {
+          grid-template-columns: repeat(2, 1fr);
+    }
+
     .desktop-content {
         display: none !important;
     }
@@ -740,6 +879,39 @@ footer .spacer {
         margin: 62px 0px 0px 0px;
         padding: 0px 14px;
         width: calc(100% - 28px);
+    }
+
+    .filter-bar {
+        zoom: 0.80;
+    }
+
+    .filters {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100% !important;
+        height: 600px;
+        box-sizing: border-box;
+        padding: 30px 20px 20px 20px;
+        margin: 0px !important;
+        border-radius: 20px 20px 0px 0px;
+    }
+
+    .filters::before {
+      content: "";
+      position: absolute;
+      top: 15px;
+      width: 100px;
+      height: 5px;
+      background-color: #515151;
+      left: 50%;
+      border-radius: 1000px;
+      transform: translateX(-50%);
+      cursor: grab;
+    }
+
+    #product-grid-container {
+        padding: 0px;
     }
 
     .hero-details {

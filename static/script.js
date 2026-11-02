@@ -1,3 +1,5 @@
+
+
 // Sync the offset of the main tag based on the height of the header tag
 function headerOffset() {
   const headerHight = document.querySelector('header').getBoundingClientRect().height
@@ -18,6 +20,120 @@ function desktopMobileOptimizer() {
 
 window.addEventListener('DOMContentLoaded', desktopMobileOptimizer);
 window.addEventListener('resize', desktopMobileOptimizer);
+
+
+function filtergrid(filter, transition=true) {
+  try {
+
+    let products = document.querySelectorAll(".product")
+
+    if (document.startViewTransition && transition) {
+      document.startViewTransition(() => {
+        products.forEach((product) => {
+
+          const type = product.getAttribute('data-type')
+
+            if (filter == "all") {
+              product.classList.remove('hidden')
+            } else {
+              if (type == filter) {
+                product.classList.remove('hidden')
+              } else {
+                product.classList.add('hidden')
+              }
+            }
+        });
+
+      })
+    } else {
+      products.forEach((product) => {
+
+        const type = product.getAttribute('data-type')
+
+          if (filter == "all") {
+            product.classList.remove('hidden')
+          } else {
+            if (type == filter) {
+              product.classList.remove('hidden')
+            } else {
+              product.classList.add('hidden')
+            }
+          }
+      });
+    }
+
+
+
+
+
+  } catch(e) { console.log(e) }
+}
+
+
+
+try {
+
+  const params = new URLSearchParams(window.location.search);
+  const type = params.get('type')
+  if (params.has('type')) {
+    filtergrid(type, false)
+    document.querySelectorAll('.type').forEach((el) => {
+      el.classList.remove('selected');
+    });
+    document.querySelector(`#${type}`).classList.add('selected')
+  }
+} catch { }
+
+try {
+
+  document.querySelector('#all').addEventListener('click', () => {
+
+    document.querySelectorAll('.type').forEach((el) => {
+      el.classList.remove('selected');
+    });
+
+    document.querySelector('#all').classList.add('selected')
+
+    filtergrid("all")
+  });
+
+  document.querySelector('#shoes').addEventListener('click', () => {
+
+    document.querySelectorAll('.type').forEach((el) => {
+      el.classList.remove('selected');
+    });
+
+    document.querySelector('#shoes').classList.add('selected')
+
+    filtergrid("shoes")
+  });
+
+  document.querySelector('#gear').addEventListener('click', () => {
+
+    document.querySelectorAll('.type').forEach((el) => {
+      el.classList.remove('selected');
+    });
+
+    document.querySelector('#gear').classList.add('selected')
+
+    filtergrid("gear")
+  });
+
+  document.querySelector('#ball').addEventListener('click', () => {
+
+    document.querySelectorAll('.type').forEach((el) => {
+      el.classList.remove('selected');
+    });
+
+    document.querySelector('#ball').classList.add('selected')
+
+    filtergrid("ball")
+  });
+
+
+} catch(e) { console.log(e) }
+
+
 
 
 
@@ -44,10 +160,10 @@ function sportsorcasualfunc() {
           <h1>
               ${footballel.textContent}
           </h1>
-          <a href="/sports/${footballel.textContent.toLocaleLowerCase()}.html?type=all" >Shop All ${footballel.textContent}</a>
-          <a href="/sports/${footballel.textContent.toLocaleLowerCase()}.html?type=shoes" >Shoes</a>
-          <a href="/sports/${footballel.textContent.toLocaleLowerCase()}.html?type=gear" >Gear</a>
-          <a href="/sports/${footballel.textContent.toLocaleLowerCase()}.html?type=ball" >Balls</a>
+          <a href="/sports/${footballel.textContent.toLocaleLowerCase().replaceAll(' ', '')}.html?type=all" >Shop All ${footballel.textContent}</a>
+          <a href="/sports/${footballel.textContent.toLocaleLowerCase().replaceAll(' ', '')}.html?type=shoes" >Shoes</a>
+          <a href="/sports/${footballel.textContent.toLocaleLowerCase().replaceAll(' ', '')}.html?type=gear" >Gear</a>
+          <a href="/sports/${footballel.textContent.toLocaleLowerCase().replaceAll(' ', '')}.html?type=ball" >Balls</a>
           <div class="gap"></div>
           <a>Choosing your Gear</a>
           <a>Our ${footballel.textContent} Blog</a>
@@ -71,6 +187,36 @@ function sportsorcasualfunc() {
 }
 
 
+
+try {
+  document.querySelector('#hide-button').addEventListener('click', () => {
+    if (document.startViewTransition) {
+      document.startViewTransition(() => {
+        document.querySelector('#filters').classList.add('hidden');
+        document.querySelector('#showfilters').classList.remove('hidden');
+      });
+    } else {
+      document.querySelector('#filters').classList.add('hidden');
+      document.querySelector('#showfilters').classList.remove('hidden');
+    }
+  });
+
+  document.querySelector('#showfilters').addEventListener('click', () => {
+    if (document.startViewTransition) {
+      document.startViewTransition(() => {
+        document.querySelector('#filters').classList.remove('hidden');
+        document.querySelector('#showfilters').classList.add('hidden');
+      });
+    } else {
+      document.querySelector('#filters').classList.remove('hidden');
+      document.querySelector('#showfilters').classList.add('hidden');
+    }
+  });
+} catch { }
+
+
+
+
 // Dropdowncode
 
 
@@ -90,10 +236,10 @@ document.addEventListener('DOMContentLoaded', () => {
           <h1>
               ${footballel.textContent}
           </h1>
-          <a href="/sports/${footballel.textContent.toLocaleLowerCase()}.html?type=all" >Shop All ${footballel.textContent}</a>
-          <a href="/sports/${footballel.textContent.toLocaleLowerCase()}.html?type=shoes" >Shoes</a>
-          <a href="/sports/${footballel.textContent.toLocaleLowerCase()}.html?type=gear" >Gear</a>
-          <a href="/sports/${footballel.textContent.toLocaleLowerCase()}.html?type=ball" >Balls</a>
+          <a href="/sports/${footballel.textContent.toLocaleLowerCase().replaceAll(' ', '')}.html?type=all" >Shop All ${footballel.textContent}</a>
+          <a href="/sports/${footballel.textContent.toLocaleLowerCase().replaceAll(' ', '')}.html?type=shoes" >Shoes</a>
+          <a href="/sports/${footballel.textContent.toLocaleLowerCase().replaceAll(' ', '')}.html?type=gear" >Gear</a>
+          <a href="/sports/${footballel.textContent.toLocaleLowerCase().replaceAll(' ', '')}.html?type=ball" >Balls</a>
           <div class="gap"></div>
           <a>Choosing your Gear</a>
           <a>Our ${footballel.textContent} Blog</a>
@@ -228,10 +374,10 @@ document.querySelector('.sliding-segmented-control').addEventListener('click', (
               <h1>
                   ${footballel.textContent}
               </h1>
-              <a href="/sports/${footballel.textContent.toLocaleLowerCase()}.html?type=all" >Shop All ${footballel.textContent}</a>
-              <a href="/sports/${footballel.textContent.toLocaleLowerCase()}.html?type=shoes" >Shoes</a>
-              <a href="/sports/${footballel.textContent.toLocaleLowerCase()}.html?type=gear" >Gear</a>
-              <a href="/sports/${footballel.textContent.toLocaleLowerCase()}.html?type=ball" >Balls</a>
+              <a href="/sports/${footballel.textContent.toLocaleLowerCase().replaceAll(' ', '')}.html?type=all" >Shop All ${footballel.textContent}</a>
+              <a href="/sports/${footballel.textContent.toLocaleLowerCase().replaceAll(' ', '')}.html?type=shoes" >Shoes</a>
+              <a href="/sports/${footballel.textContent.toLocaleLowerCase().replaceAll(' ', '')}.html?type=gear" >Gear</a>
+              <a href="/sports/${footballel.textContent.toLocaleLowerCase().replaceAll(' ', '')}.html?type=ball" >Balls</a>
               <div class="gap"></div>
               <a>Choosing your Gear</a>
               <a>Our ${footballel.textContent} Blog</a>
@@ -283,10 +429,10 @@ function animate(timestamp) {
               <h1>
                   ${footballel.textContent}
               </h1>
-              <a href="/sports/${footballel.textContent.toLocaleLowerCase()}.html?type=all" >Shop All ${footballel.textContent}</a>
-              <a href="/sports/${footballel.textContent.toLocaleLowerCase()}.html?type=shoes" >Shoes</a>
-              <a href="/sports/${footballel.textContent.toLocaleLowerCase()}.html?type=gear" >Gear</a>
-              <a href="/sports/${footballel.textContent.toLocaleLowerCase()}.html?type=ball" >Balls</a>
+              <a href="/sports/${footballel.textContent.toLocaleLowerCase().replaceAll(' ', '')}.html?type=all" >Shop All ${footballel.textContent}</a>
+              <a href="/sports/${footballel.textContent.toLocaleLowerCase().replaceAll(' ', '')}.html?type=shoes" >Shoes</a>
+              <a href="/sports/${footballel.textContent.toLocaleLowerCase().replaceAll(' ', '')}.html?type=gear" >Gear</a>
+              <a href="/sports/${footballel.textContent.toLocaleLowerCase().replaceAll(' ', '')}.html?type=ball" >Balls</a>
               <div class="gap"></div>
               <a>Choosing your Gear</a>
               <a>Our ${footballel.textContent} Blog</a>
@@ -309,10 +455,10 @@ function animate(timestamp) {
                 <h1>
                     ${footballel.textContent}
                 </h1>
-                <a href="/sports/${footballel.textContent.toLocaleLowerCase()}.html?type=all" >Shop All ${footballel.textContent}</a>
-                <a href="/sports/${footballel.textContent.toLocaleLowerCase()}.html?type=shoes" >Shoes</a>
-                <a href="/sports/${footballel.textContent.toLocaleLowerCase()}.html?type=gear" >Gear</a>
-                <a href="/sports/${footballel.textContent.toLocaleLowerCase()}.html?type=ball" >Balls</a>
+                <a href="/sports/${footballel.textContent.toLocaleLowerCase().replaceAll(' ', '')}.html?type=all" >Shop All ${footballel.textContent}</a>
+                <a href="/sports/${footballel.textContent.toLocaleLowerCase().replaceAll(' ', '')}.html?type=shoes" >Shoes</a>
+                <a href="/sports/${footballel.textContent.toLocaleLowerCase().replaceAll(' ', '')}.html?type=gear" >Gear</a>
+                <a href="/sports/${footballel.textContent.toLocaleLowerCase().replaceAll(' ', '')}.html?type=ball" >Balls</a>
                 <div class="gap"></div>
                 <a>Choosing your Gear</a>
                 <a>Our ${footballel.textContent} Blog</a>

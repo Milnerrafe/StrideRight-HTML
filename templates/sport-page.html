@@ -4,7 +4,7 @@
 
 {% block content %}
 
-<div id="sports-header">
+<div id="sports-header" style="background: linear-gradient(0deg, rgba(0, 0, 0, 0.50) 0%, rgba(0, 0, 0, 0.70) 100%), url('/static/images/headers/{{ sport.lower() }}.png') lightgray 50% / cover no-repeat;">
     <h1>{{ sport }}</h1>
 
     <div class="filler"></div>
@@ -17,10 +17,10 @@
 </div>
 
 <div id="product-types">
-    <div class="type selected">All</div>
-    <div class="type">Shoes</div>
-    <div class="type">Gear</div>
-    <div class="type">Balls</div>
+    <div class="type selected" id="all">All</div>
+    <div class="type" id="shoes">Shoes</div>
+    <div class="type" id="gear">Gear</div>
+    <div class="type" id="ball">Balls</div>
     <div class="filler"></div>
     <form action="https://google.com/search" class="SearchForm desktop-content" method="get">
         <input type="text" name="q" placeholder="􀊫Search" class="SearchBox" required>
@@ -29,15 +29,316 @@
 
 
 <div id="product-grid-container">
-    <div class="filters">
+    <div id="filters" class="filters">
         <div class="topbar">
             <h1>Filters</h1>
             <div class="filler"></div>
-            <div class="hide-button">􀋯Hide</div>
+            <div class="hide-button" id="hide-button">􀋯Hide</div>
         </div>
+
+        <div class="filter-drop-downs">
+              <div class="drop-down">Colours􀆈</div>
+              <div class="drop-down">Price􀆈</div>
+              <div class="drop-down">Sport􀆈</div>
+              <div class="drop-down">Vibe􀆈</div>
+              <div class="drop-down">Brand􀆈</div>
+        </div>
+
+
     </div>
 
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <div class="stack">
+
+        <div class="filter-bar">
+            <div class="sortby hidden" id="showfilters">􀜓Show Filters</div>
+            <div data-colour="#F54040" class="filter">
+                <div class="name">􀝥Red</div>
+                <div class="filler"></div>
+                <div class="close">􀁏</div>
+            </div>
+
+            <div data-colour="#0095FF" class="filter">
+                <div class="name">$45 - $200</div>
+                <div class="filler"></div>
+                <div class="close">􀁏</div>
+            </div>
+
+            <div class="filler"></div>
+            <div class="sortby">Sort By􀆈</div>
+        </div>
+
+        <div class="product-grid">
+
+            <div class="product" data-type="shoes" style="view-transition-name: item-1;">
+                <img src="/static/images/Products/product1/image1.png"></img>
+                <div class="colours">
+                    <div class="colour" data-colour="#000000"></div>
+                    <div class="colour" data-colour="#ffffff"></div>
+                    <div class="colour" data-colour="#ff0000"></div>
+                </div>
+                <div class="details">
+                    <div class="name">Sports product 1</div>
+                    <div class="filler"></div>
+                    <div class="price">$260</div>
+                </div>
+            </div>
+
+            <div class="product" data-type="shoes" style="view-transition-name: item-2;">
+                <img src="/static/images/Products/product2/image1.png"></img>
+                <div class="colours">
+                    <div class="colour" data-colour="#000000"></div>
+                </div>
+                <div class="details">
+                    <div class="name">Sports product 2</div>
+                    <div class="filler"></div>
+                    <div class="price">$195</div>
+                </div>
+            </div>
+
+            <div class="product" data-type="gear" style="view-transition-name: item-3;">
+                <img src="/static/images/Products/product3/image1.png"></img>
+                <div class="colours">
+                    <div class="colour" data-colour="#000000"></div>
+                    <div class="colour" data-colour="#ffffff"></div>
+                    <div class="colour" data-colour="#0000ff"></div>
+                    <div class="colour" data-colour="#ff0000"></div>
+                </div>
+                <div class="details">
+                    <div class="name">Sports product 3</div>
+                    <div class="filler"></div>
+                    <div class="price">$310</div>
+                </div>
+            </div>
+
+            <div class="product" data-type="shoes" style="view-transition-name: item-4;">
+                <img src="/static/images/Products/product4/image1.png"></img>
+                <div class="colours">
+                    <div class="colour" data-colour="#ffffff"></div>
+                </div>
+                <div class="details">
+                    <div class="name">Sports product 4</div>
+                    <div class="filler"></div>
+                    <div class="price">$220</div>
+                </div>
+            </div>
+
+            <div class="product" data-type="shoes" style="view-transition-name: item-5;">
+                <img src="/static/images/Products/product5/image1.png"></img>
+                <div class="colours">
+                    <div class="colour" data-colour="#000000"></div>
+                    <div class="colour" data-colour="#ffff00"></div>
+                </div>
+                <div class="details">
+                    <div class="name">Sports product 5</div>
+                    <div class="filler"></div>
+                    <div class="price">$285</div>
+                </div>
+            </div>
+
+            <div class="product" data-type="shoes" style="view-transition-name: item-6;">
+                <img src="/static/images/Products/product6/image1.png"></img>
+                <div class="colours">
+                    <div class="colour" data-colour="#0000ff"></div>
+                    <div class="colour" data-colour="#ff0000"></div>
+                    <div class="colour" data-colour="#ffffff"></div>
+                </div>
+                <div class="details">
+                    <div class="name">Sports product 6</div>
+                    <div class="filler"></div>
+                    <div class="price">$175</div>
+                </div>
+            </div>
+
+            <div class="product" data-type="gear" style="view-transition-name: item-7;">
+                <img src="/static/images/Products/product7/image1.png"></img>
+                <div class="colours">
+                    <div class="colour" data-colour="#000000"></div>
+                    <div class="colour" data-colour="#ffffff"></div>
+                </div>
+                <div class="details">
+                    <div class="name">Sports product 7</div>
+                    <div class="filler"></div>
+                    <div class="price">$240</div>
+                </div>
+            </div>
+
+            <div class="product" data-type="shoes" style="view-transition-name: item-8;">
+                <img src="/static/images/Products/product8/image1.png"></img>
+                <div class="colours">
+                    <div class="colour" data-colour="#0000ff"></div>
+                    <div class="colour" data-colour="#ffff00"></div>
+                    <div class="colour" data-colour="#000000"></div>
+                    <div class="colour" data-colour="#ffffff"></div>
+                </div>
+                <div class="details">
+                    <div class="name">Sports product 8</div>
+                    <div class="filler"></div>
+                    <div class="price">$290</div>
+                </div>
+            </div>
+
+            <div class="product" data-type="shoes" style="view-transition-name: item-9;">
+                <img src="/static/images/Products/product9/image1.png"></img>
+                <div class="colours">
+                    <div class="colour" data-colour="#ff0000"></div>
+                </div>
+                <div class="details">
+                    <div class="name">Sports product 9</div>
+                    <div class="filler"></div>
+                    <div class="price">$210</div>
+                </div>
+            </div>
+
+            <div class="product" data-type="shoes" style="view-transition-name: item-10;">
+                <img src="/static/images/Products/product10/image1.png"></img>
+                <div class="colours">
+                    <div class="colour" data-colour="#000000"></div>
+                    <div class="colour" data-colour="#0000ff"></div>
+                </div>
+                <div class="details">
+                    <div class="name">Sports product 10</div>
+                    <div class="filler"></div>
+                    <div class="price">$350</div>
+                </div>
+            </div>
+
+            <div class="product" data-type="gear" style="view-transition-name: item-11;">
+                <img src="/static/images/Products/product11/image1.png"></img>
+                <div class="colours">
+                    <div class="colour" data-colour="#ffffff"></div>
+                    <div class="colour" data-colour="#ff0000"></div>
+                    <div class="colour" data-colour="#000000"></div>
+                </div>
+                <div class="details">
+                    <div class="name">Sports product 11</div>
+                    <div class="filler"></div>
+                    <div class="price">$180</div>
+                </div>
+            </div>
+
+            <div class="product" data-type="ball" style="view-transition-name: item-12;">
+                <img src="/static/images/Products/product12/image1.png"></img>
+                <div class="colours">
+                    <div class="colour" data-colour="#ffff00"></div>
+                    <div class="colour" data-colour="#ffffff"></div>
+                </div>
+                <div class="details">
+                    <div class="name">Sports product 12</div>
+                    <div class="filler"></div>
+                    <div class="price">$230</div>
+                </div>
+            </div>
+
+            <div class="product" data-type="shoes" style="view-transition-name: item-13;">
+                <img src="/static/images/Products/product13/image1.png"></img>
+                <div class="colours">
+                    <div class="colour" data-colour="#0000ff"></div>
+                </div>
+                <div class="details">
+                    <div class="name">Sports product 13</div>
+                    <div class="filler"></div>
+                    <div class="price">$295</div>
+                </div>
+            </div>
+
+            <div class="product" data-type="shoes" style="view-transition-name: item-14;">
+                <img src="/static/images/Products/product14/image1.png"></img>
+                <div class="colours">
+                    <div class="colour" data-colour="#000000"></div>
+                    <div class="colour" data-colour="#ffffff"></div>
+                    <div class="colour" data-colour="#ffff00"></div>
+                    <div class="colour" data-colour="#ff0000"></div>
+                </div>
+                <div class="details">
+                    <div class="name">Sports product 14</div>
+                    <div class="filler"></div>
+                    <div class="price">$315</div>
+                </div>
+            </div>
+
+            <div class="product" data-type="shoes" style="view-transition-name: item-15;">
+                <img src="/static/images/Products/product15/image1.png"></img>
+                <div class="colours">
+                    <div class="colour" data-colour="#ff0000"></div>
+                    <div class="colour" data-colour="#0000ff"></div>
+                </div>
+                <div class="details">
+                    <div class="name">Sports product 15</div>
+                    <div class="filler"></div>
+                    <div class="price">$160</div>
+                </div>
+            </div>
+
+            <div class="product" data-type="gear" style="view-transition-name: item-16;">
+                <img src="/static/images/Products/product16/image1.png"></img>
+                <div class="colours">
+                    <div class="colour" data-colour="#000000"></div>
+                    <div class="colour" data-colour="#ffffff"></div>
+                    <div class="colour" data-colour="#0000ff"></div>
+                </div>
+                <div class="details">
+                    <div class="name">Sports product 16</div>
+                    <div class="filler"></div>
+                    <div class="price">$270</div>
+                </div>
+            </div>
+
+            <div class="product" data-type="shoes" style="view-transition-name: item-17;">
+                <img src="/static/images/Products/product17/image1.png"></img>
+                <div class="colours">
+                    <div class="colour" data-colour="#ffff00"></div>
+                </div>
+                <div class="details">
+                    <div class="name">Sports product 17</div>
+                    <div class="filler"></div>
+                    <div class="price">$245</div>
+                </div>
+            </div>
+
+            <div class="product" data-type="shoes" style="view-transition-name: item-18;">
+                <img src="/static/images/Products/product18/image1.png"></img>
+                <div class="colours">
+                    <div class="colour" data-colour="#000000"></div>
+                    <div class="colour" data-colour="#ff0000"></div>
+                    <div class="colour" data-colour="#ffff00"></div>
+                </div>
+                <div class="details">
+                    <div class="name">Sports product 18</div>
+                    <div class="filler"></div>
+                    <div class="price">$190</div>
+                </div>
+            </div>
+
+            <div class="product" data-type="shoes" style="view-transition-name: item-19;">
+                <img src="/static/images/Products/product19/image1.png"></img>
+                <div class="colours">
+                    <div class="colour" data-colour="#ffffff"></div>
+                    <div class="colour" data-colour="#0000ff"></div>
+                    <div class="colour" data-colour="#000000"></div>
+                    <div class="colour" data-colour="#ff0000"></div>
+                </div>
+                <div class="details">
+                    <div class="name">Sports product 19</div>
+                    <div class="filler"></div>
+                    <div class="price">$325</div>
+                </div>
+            </div>
+
+            <div class="product" data-type="gear" style="view-transition-name: item-20;">
+                <img src="/static/images/Products/product20/image1.png"></img>
+                <div class="colours">
+                    <div class="colour" data-colour="#000000"></div>
+                </div>
+                <div class="details">
+                    <div class="name">Sports product 20</div>
+                    <div class="filler"></div>
+                    <div class="price">$275</div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
 
 </div>
 
