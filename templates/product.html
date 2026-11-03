@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block title %}StrideRight: {{ sport }} {% endblock %}
+
+{% block content %}
+
+<div id="product-page-container">
+    <div class="product-photo-view">
+        <div class="image-previews">
+            <img class="image-preview selected-image" src="/static/images/Products/product1/image1.png">
+            <img class="image-preview" src="/static/images/Products/product1/image1.png">
+            <img class="image-preview" src="/static/images/Products/product1/image1.png">
+            <img class="image-preview" src="/static/images/Products/product1/image1.png">
+        </div>
+    </div>
+
+     <div class="product-info-view">
+
+
+
+
+
+         <div class="product-name">
+             <h1>Product One</h1>
+             <div class="filler"></div>
+             <h2>$167</h2>
+         </div>
+
+         <div class="options">
+             <div class="product-option">
+                 <p>Colour:</p>
+                 <div class="product-colour">
+                     <div data-colour="#AC5454" class="product-colour-option"></div>
+                     <div data-colour="#000000" class="product-colour-option selected-colour"></div>
+                     <div data-colour="#FFFFFF" class="product-colour-option"></div>
+                 </div>
+             </div>
+
+
+             <div class="product-option">
+                 <p>Size:</p>
+                 <select class="product-size-select" name="size">
+                   <option value="8">Mens 8</option>
+                   <option value="9">Mens 9</option>
+                   <option value="10">Mens 10</option>
+                   <option value="11">Mens 11</option>
+                   <option value="12">Mens 12</option>
+                   <option value="13">Mens 13</option>
+                   <option value="14">Mens 14</option>
+                 </select>
+             </div>
+         </div>
+
+
+         <div class="info-box">
+             <div class="title-box">
+               <p>Sports Info</p>
+               <div class="filler"></div>
+               <p>􀆇</p>
+             </div>
+
+             <div class="info-list">
+                 <p>􁗌Great for your sport</p>
+                 <p>􀜍Features great features</p>
+                 <p>􁗡Trusted by the best</p>
+             </div>
+         </div>
+
+
+         <div class="info-box">
+             <div class="title-box">
+               <p>Description</p>
+               <div class="filler"></div>
+               <p>􀆇</p>
+             </div>
+
+             <div class="info-list">
+                 <p>Step into peak performance and all-day comfort with these versatile sports shoes, designed to keep up with your active lifestyle by seamlessly blending cutting-edge athletic technology with modern style. Featuring a lightweight, engineered mesh upper that maximizes airflow to keep your feet cool, they incorporate responsive foam midsoles that absorb impact and deliver high-energy return with every stride. A durable, high-grip rubber outsole with a multi-directional tread pattern ensures exceptional stability across any surface, while a secure lacing system and padded collar provide a locked-in fit. Whether you are hitting the gym, going for a run, or navigating a busy day on your feet, these shoes offer the ultimate combination of support, breathability, and effortless athletic aesthetic.</p>
+             </div>
+         </div>
+
+
+
+         <div class="filler"></div>
+
+         <button class="addtocart-button" onclick="window.location.href = `/cart/`">Add to Cart</button>
+
+     </div>
+</div>
+
+{% endblock %}

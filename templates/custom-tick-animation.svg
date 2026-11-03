@@ -1,0 +1,66 @@
+<svg class="checkAnimation" width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<style>
+@keyframes kf_Vector_2_border-width_0 {
+  0% {
+    animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
+    stroke-width: 0px;
+  }
+  50.76% {
+    animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
+    stroke-width: 1px;
+  }
+  100% {
+    stroke-width: 0px;
+  }
+}
+@keyframes kf_Vector_2_stroke_0 {
+  0% {
+    stroke: #FFF;
+  }
+  100% {
+    stroke: #FFF;
+  }
+}
+#Vector_2 {
+  animation:
+    kf_Vector_2_border-width_0 0.6s linear forwards,
+    kf_Vector_2_stroke_0 0.6s linear forwards;
+}
+@keyframes kf_Vector_3_transform_0 {
+  0% {
+    animation-timing-function: cubic-bezier(0.45, 1.45, 0.8, 1);
+    transform: translateX(5.322px) translateY(5.635px) translate(4.6px, 4.551px) scaleX(0) scaleY(0) translate(-4.6px, -4.551px);
+  }
+  100% {
+    transform: translateX(5.322px) translateY(5.635px) translate(4.6px, 4.551px) scaleX(1) scaleY(1) translate(-4.6px, -4.551px);
+  }
+}
+@keyframes kf_Vector_3_fill_0 {
+  0% {
+    animation-timing-function: cubic-bezier(0.45, 1.45, 0.8, 1);
+    fill: #00FF51;
+  }
+  100% {
+    fill: #FFF;
+  }
+}
+#Vector_3 {
+  transform-origin: 0 0;
+  animation:
+    kf_Vector_3_transform_0 0.6s linear forwards,
+    kf_Vector_3_fill_0 0.6s linear forwards;
+}
+</style>
+<g id="Frame" clip-path="url(#clip0_245_170)">
+<g id="Group">
+<path id="Vector" opacity="0" d="M20.2832 0H0V19.9316H20.2832V0Z" fill="black"/>
+<path id="Vector_2" d="M9.96094 0.5C15.1829 0.5 19.4219 4.73903 19.4219 9.96094C19.4219 15.1734 15.1825 19.4219 9.96094 19.4219C4.7488 19.4219 0.5 15.1731 0.5 9.96094C0.500002 4.73935 4.74848 0.500002 9.96094 0.5Z" fill="#00FF51" stroke="white"/>
+<path id="Vector_3" transform="translate(5.32227 5.63477)" d="M3.54492 9.10153C3.21289 9.10153 2.93945 8.96483 2.68554 8.62303L0.23437 5.61523C0.0878902 5.41993 0 5.20503 0 4.98043C0 4.54103 0.34179 4.17968 0.78125 4.17968C1.06445 4.17968 1.27929 4.26757 1.52343 4.58983L3.50585 7.14843L7.67573 0.44921C7.86133 0.15625 8.11523 0 8.36913 0C8.79883 0 9.19923 0.29296 9.19923 0.75195C9.19923 0.96679 9.07223 1.1914 8.95503 1.39648L4.36523 8.62303C4.16015 8.94533 3.87695 9.10153 3.54492 9.10153Z" fill="white"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_245_170">
+<rect width="20.2832" height="19.9316" fill="white"/>
+</clipPath>
+</defs>
+</svg>

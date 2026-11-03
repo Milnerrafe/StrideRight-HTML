@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block title %}StrideRight: {{ sport }} {% endblock %}
+
+{% block content %}
+
+    <div id="cart-page-container">
+
+        <h1>Your Cart:</h1>
+
+        <div class="cart-product">
+            <img src="/static/images/Products/product1/image1.png">
+
+            <div class="info">
+                <h1>Product One</h1>
+                <div class="details">
+                    <p>Size: 12</p>
+                    <p>Colour: Red</p>
+                </div>
+            </div>
+
+            <div class="filler"></div>
+
+            <div class="prices">
+                <h2>$183.7</h2>
+                <div class="price-gap"></div>
+                <h3>Including $16.7 GST</h3>
+            </div>
+
+
+            <button>􀁏 Remove</button>
+        </div>
+
+        <div class="cart-product">
+            <img src="/static/images/Products/product1/image1.png">
+
+            <div class="info">
+                <h1>Product Two</h1>
+                <div class="details">
+                    <p>Size: 8</p>
+                    <p>Colour: Black</p>
+                </div>
+            </div>
+
+            <div class="filler"></div>
+
+            <div class="prices">
+                <h2>$288</h2>
+                <div class="price-gap"></div>
+                <h3>Including $26 GST</h3>
+            </div>
+
+
+            <button>􀁏 Remove</button>
+        </div>
+
+        <div class="cart-product">
+            <img src="/static/images/Products/product1/image1.png">
+
+            <div class="info">
+                <h1>Product Three</h1>
+                <div class="details">
+                    <p>Size: 10</p>
+                    <p>Colour: Yellow</p>
+                </div>
+            </div>
+
+            <div class="filler"></div>
+
+            <div class="prices">
+                <h2>$165</h2>
+                <div class="price-gap"></div>
+                <h3>Including $15 GST</h3>
+            </div>
+
+
+            <button>􀁏 Remove</button>
+        </div>
+
+        <div class="total-price">
+            <h1>Total Price: $636.7</h1>
+            <p>Including free shipping</p>
+        </div>
+
+        <button class="checkout-button" onclick="window.location.href = `/order-confirmation/`">Checkout</button>
+        <button class="checkout-button applepay" onclick="window.location.href = `/order-confirmation/`">Buy with Pay</button>
+
+
+    </div>
+
+{% endblock %}

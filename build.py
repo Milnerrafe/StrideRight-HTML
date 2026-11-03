@@ -16,9 +16,22 @@ freezer = Freezer(app)
 def index():
     return render_template('splash.html')
 
+
+@app.route('/order-confirmation/')
+def orderConfirmation():
+    return render_template('order-confirmation.html')
+
 @app.route('/search.html')
 def search():
     return render_template('search.html')
+
+@app.route('/product/')
+def product():
+    return render_template('product.html')
+
+@app.route('/cart/')
+def cart():
+    return render_template('cart.html')
 
 @app.route('/sports/<path:sport>')
 def sports(sport):
