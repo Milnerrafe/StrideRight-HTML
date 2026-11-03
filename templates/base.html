@@ -20,13 +20,17 @@
         <div class="links desktop-content">
             <div class="linktext" id="home-link">Home</div>
             <div class="linktext" id="shop-link">Shop</div>
-
         </div>
 
         <div class="filler"></div>
 
         <!-- For Desktop -->
         <div class="cart-and-account desktop-content">
+            <div id="social-icons">
+                <div class="social-icon-container" data-link="https://www.instagram.com/">{% include 'instagram.svg' %}</div>
+                <div class="social-icon-container" data-link="https://www.snapchat.com/">{% include 'snapchat.svg' %}</div>
+                <div class="social-icon-container" data-link="https://www.tiktok.com/">{% include 'tiktok.svg' %}</div>
+            </div>
             <div class="saved-button">􀊴Saved</div>
             <div class="account-button">􀉩Account</div>
             <div class="cart-button">􀍤Cart</div>
@@ -34,7 +38,7 @@
 
         <!-- For Mobile -->
         <div class="cart-and-account mobile-content">
-            <div class="cart-button">􀍤</div>
+            <div class="cart-button mobile-content">􀍤</div>
             <div class="menu-button">
                 {% include 'menu-icon.svg' %}
             </div>
@@ -143,10 +147,10 @@
             <div class="links-column">
                 <h1>Follow us</h1>
                 <div class="links">
-                    <a>Instagram</a>
-                    <a>TikTok</a>
-                    <a>Facebook</a>
-                    <a>Twitter</a>
+                    <a href="https://www.instagram.com/">Instagram</a>
+                    <a href="https://www.tiktok.com/">TikTok</a>
+                    <a href="https://www.snapchat.com/">Snapchat</a>
+                    <a href="https://www.x.com/">Twitter</a>
                 </div>
             </div>
         </div>

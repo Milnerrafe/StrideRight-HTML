@@ -37,6 +37,14 @@ def sports(sport):
 def casual():
     return render_template('casual.html')
 
+@app.route('/casual/vibes/')
+def casualvibes():
+    return render_template('casual.html')
+
+@app.route('/casual/featured/')
+def casualfeatured():
+    return render_template('casual.html')
+
 
 @freezer.register_generator
 def sports_generator():
@@ -49,9 +57,6 @@ def sports_generator():
         yield 'sports', {'sport': sport+".html"}
 
 
-@app.route('/about/')
-def about():
-    return render_template('about.html', title="About Us")
 
 if __name__ == '__main__':
     freezer.freeze()

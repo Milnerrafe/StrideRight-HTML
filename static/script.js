@@ -33,23 +33,6 @@ function filtergrid(filter, transition=true) {
 
           const type = product.getAttribute('data-type')
 
-            if (filter == "all") {
-              product.classList.remove('hidden')
-            } else {
-              if (type == filter) {
-                product.classList.remove('hidden')
-              } else {
-                product.classList.add('hidden')
-              }
-            }
-        });
-
-      })
-    } else {
-      products.forEach((product) => {
-
-        const type = product.getAttribute('data-type')
-
           if (filter == "all") {
             product.classList.remove('hidden')
           } else {
@@ -59,14 +42,26 @@ function filtergrid(filter, transition=true) {
               product.classList.add('hidden')
             }
           }
+        });
+
+      })
+    } else {
+      products.forEach((product) => {
+
+        const type = product.getAttribute('data-type')
+
+        if (filter == "all") {
+          product.classList.remove('hidden')
+        } else {
+          if (type == filter) {
+            product.classList.remove('hidden')
+          } else {
+            product.classList.add('hidden')
+          }
+        }
       });
     }
-
-
-
-
-
-  } catch(e) { console.log(e) }
+  } catch { }
 }
 
 try {
@@ -79,28 +74,64 @@ try {
 
 
 try {
-  document.querySelector('#splash').addEventListener('click', (event) => {
-    let slug = event.target.getAttribute('data-link')
-    if (slug) {
-      window.location.href = `/${slug}/`;
-    } else {
-      let slug = event.target.parentElement.getAttribute('data-link')
-      if (slug) {
-        window.location.href = `/${slug}/`;
-      } else {
-        let slug = event.target.parentElement.getAttribute('data-link')
+  const splashlinks = document.querySelector('#splash')
+
+  if (splashlinks) {
+    splashlinks.addEventListener('click', (event) => {
+      const section = event.target.closest('[data-link]');
+
+      if (section && splashlinks.contains(section)) {
+        const slug = section.getAttribute('data-link');
         if (slug) {
           window.location.href = `/${slug}/`;
         }
+
       }
-    }
-  });
+    });
+  }
+
 } catch { }
 
 
 
 try {
+  document.querySelectorAll(".cart-button").forEach((el) => {
+    el.addEventListener("click", (event) => {
+      window.location.href = `/cart/`;
+    })
+  })
+} catch { }
 
+try {
+  document.querySelectorAll(".product").forEach((el) => {
+    el.addEventListener("click", (event) => {
+      window.location.href = `/product/`;
+    })
+  })
+} catch { }
+
+
+
+try {
+  const socialContainer = document.querySelector('#social-icons');
+
+  if (socialContainer) {
+    socialContainer.addEventListener('click', (event) => {
+      const socialItem = event.target.closest('[data-link]');
+
+      if (socialItem && socialContainer.contains(socialItem)) {
+        const link = socialItem.getAttribute('data-link');
+        if (link) {
+          window.location.href = link;
+        }
+      }
+    });
+  }
+} catch { }
+
+
+
+try {
   const params = new URLSearchParams(window.location.search);
   const type = params.get('type')
   if (params.has('type')) {
@@ -159,7 +190,7 @@ try {
   });
 
 
-} catch(e) { console.log(e) }
+} catch {  }
 
 
 
@@ -182,7 +213,7 @@ function sportsorcasualfunc() {
     document.querySelectorAll('.sliding-segmented-control .item')[1].style.color = "#fff";
     document.querySelector('.sliding-segmented-control .selected').style.setProperty('--translate', `0%`);
     document.querySelector('#sports').classList.remove('hidden');
-    document.querySelector(".section4").style.background = `linear-gradient(0deg, rgba(0, 0, 0, 0.70) 0%, rgba(0, 0, 0, 0.70) 100%), url('/static/images/headers/${footballel.textContent.toLocaleLowerCase()}.png') lightgray 50% / cover no-repeat`
+    document.querySelector(".section4").style.background = `linear-gradient(0deg, rgba(0, 0, 0, 0.70) 0%, rgba(0, 0, 0, 0.70) 100%), url('/static/images/headers/${footballel.textContent.toLocaleLowerCase().replace(" ", "")}.png') lightgray 50% / cover no-repeat`
     bigtext.innerHTML = `
       <div class="sportslink">
           <h1>
@@ -207,8 +238,8 @@ function sportsorcasualfunc() {
     document.querySelector('#sports').classList.add('hidden');
     bigtext.innerHTML = `
       <div class="sportslink">
-          <a href="/casual/vibes" >Vibes</a>
-          <a href="/casual/featured" >Featured</a>
+          <a href="/casual/vibes/" >Vibes</a>
+          <a href="/casual/featured/" >Featured</a>
       </div>
       `
   }
@@ -253,12 +284,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const currentPath = urlArray.length == 1 ? urlArray[0].toLowerCase() : "";
 
   if (currentPath == "sports") {
-    console.log(1)
     document.querySelectorAll('.sliding-segmented-control .item')[0].style.color = "#000";
     document.querySelectorAll('.sliding-segmented-control .item')[1].style.color = "#fff";
     document.querySelector('.sliding-segmented-control .selected').style.setProperty('--translate', `0%`);
     document.querySelector('#sports').classList.remove('hidden');
-    document.querySelector(".section4").style.background = `linear-gradient(0deg, rgba(0, 0, 0, 0.70) 0%, rgba(0, 0, 0, 0.70) 100%), url('/static/images/headers/${footballel.textContent.toLocaleLowerCase()}.png') lightgray 50% / cover no-repeat`
+    document.querySelector(".section4").style.background = `linear-gradient(0deg, rgba(0, 0, 0, 0.70) 0%, rgba(0, 0, 0, 0.70) 100%), url('/static/images/headers/${footballel.textContent.toLocaleLowerCase().replace(" ", "")}.png') lightgray 50% / cover no-repeat`
     bigtext.innerHTML = `
       <div class="sportslink">
           <h1>
@@ -277,7 +307,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   if (currentPath == "casual") {
-    console.log(2)
     document.querySelectorAll('.sliding-segmented-control .item')[0].style.color = "#fff";
     document.querySelectorAll('.sliding-segmented-control .item')[1].style.color = "#000";
     document.querySelector('.sliding-segmented-control .selected').style.setProperty('--translate', `100%`);
@@ -289,7 +318,6 @@ document.addEventListener('DOMContentLoaded', () => {
           <a href="/casual/featured" >Featured</a>
       </div>
       `
-    console.log(3)
     sportsorcasual = false
   }
 
