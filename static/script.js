@@ -70,6 +70,26 @@ function filtergrid(filter, transition=true) {
 }
 
 
+try {
+  document.querySelector('#splash').addEventListener('click', (event) => {
+    let slug = event.target.getAttribute('data-link')
+    if (slug) {
+      window.location.href = `/${slug}/`;
+    } else {
+      let slug = event.target.parentElement.getAttribute('data-link')
+      if (slug) {
+        window.location.href = `/${slug}/`;
+      } else {
+        let slug = event.target.parentElement.getAttribute('data-link')
+        if (slug) {
+          window.location.href = `/${slug}/`;
+        }
+      }
+    }
+  });
+} catch { }
+
+
 
 try {
 
