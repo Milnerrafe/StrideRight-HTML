@@ -69,6 +69,14 @@ function filtergrid(filter, transition=true) {
   } catch(e) { console.log(e) }
 }
 
+try {
+  const params = new URLSearchParams(window.location.search);
+  const text = params.get('q')
+  if (params.has('q')) {
+    document.querySelector('#search-text').value = text
+  }
+} catch { }
+
 
 try {
   document.querySelector('#splash').addEventListener('click', (event) => {

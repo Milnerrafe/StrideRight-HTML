@@ -604,6 +604,7 @@ footer .spacer {
 }
 
 #product-types {
+    box-sizing: border-box;
     height: 124px;
     display: flex;
     padding: 0px 0px 0px 30px;
@@ -611,6 +612,47 @@ footer .spacer {
     align-items: center;
     user-select: none;
 }
+
+.search-bar {
+    height: 75px;
+    display: flex;
+    align-items: center;
+    padding: 30px 30px 0px 30px;
+}
+
+.Searchinput {
+    all: unset;
+    display: flex;
+    flex-grow: 1;
+}
+
+.Searchinput input {
+    width: 100%;
+    border: 0px;
+    padding: 0px 0px 5px 0px;
+    border-bottom: 2.5px solid #000 !important;
+    font-family: "SF Pro";
+    font-size: 40px;
+}
+
+.search-bar button{
+    border: 0px;
+    color: #C9C9C9;
+    background-color: #fff;
+    padding: 0px 0px 5px 0px;
+    border-bottom: 2.5px solid #000 !important;
+    font-family: "SF Pro";
+    font-size: 40px;
+}
+
+.search-bar button:hover{
+    color: #B7B7B7;
+}
+
+.search-bar button:active{
+    color: #7F7F7F;
+}
+
 
 #product-types .type {
     color: #C9C9C9;

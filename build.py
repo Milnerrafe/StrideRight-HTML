@@ -16,6 +16,10 @@ freezer = Freezer(app)
 def index():
     return render_template('splash.html')
 
+@app.route('/search.html')
+def search():
+    return render_template('search.html')
+
 @app.route('/sports/<path:sport>')
 def sports(sport):
     sports = [
